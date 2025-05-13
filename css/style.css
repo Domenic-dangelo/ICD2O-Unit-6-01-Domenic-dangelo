@@ -13,12 +13,13 @@
   background: #000;
   opacity: 0.001;
 }
+
 body {
-  background-color: rgb(167, 245, 73);
+  color: rgb(167, 245, 73 / 50%);
 }
 
 p {
-  color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0 / 50%);
   font-family: Helvetica, Arial, sans-serif;
   font-size: 80px;
   padding-top: 5pt;
