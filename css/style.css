@@ -15,11 +15,11 @@
 }
 
 body {
-  color: rgb(167, 245, 73 / 50%);
+  background-color: rgb(167, 245, 73);
 }
 
 p {
-  color: rgb(0, 0, 0 / 50%);
+  color: rgb(0, 0, 0);
   font-family: Helvetica, Arial, sans-serif;
   font-size: 80px;
   padding-top: 5pt;
