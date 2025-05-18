@@ -24,36 +24,28 @@ if (navigator.serviceWorker) {
  */
 // eslint-disable-next-line no-unused-vars
 function calculate () {
-  document.getElementById('hello-world').innerHTML = '<p>Hello, World!</p>'
-  const lengthA = parseFloat(document.getElementById('sideA').value)
-  const lengthB = parseFloat(document.getElementById('sideB').value)
-  const lengthC = parseFloat(document.getElementById('sideC').value)
+  // input
+  const movieAgeRating = document.getElementById("age-rating").value
 
-  // using the cosine law
-  const angleA = Math.acos((lengthB ** 2 + lengthC ** 2 - lengthA ** 2) / (2 * lengthB * lengthC)) * (180 / Math.PI)
-  const angleB = Math.acos((lengthC ** 2 + lengthA ** 2 - lengthB ** 2) / (2 * lengthC * lengthA)) * (180 / Math.PI)
-  const angleC = Math.acos((lengthA ** 2 + lengthB ** 2 - lengthC ** 2) / (2 * lengthA * lengthB)) * (180 / Math.PI)
+  // process
+  if (movieAgeRating >= 17) {
+    // output
+    document.getElementById("result").innerHTML =
+      "<p>You can see R rated movies.</p>"
+  }
 
-  const sumOfAngles = Number((angleA).toFixed(2)) + Number((angleB).toFixed(2)) + Number((angleC).toFixed(2))
+  else if(movieAgeRating >= 13){
+    document.getElementById("result").innerHTML =
+      "<p>You can see PG-13 rated movies.</p>"
+  }
 
-  console.log(angleA)
-  console.log(angleB)
-  console.log(angleC)
-  console.log(sumOfAngles)
+  else if(movieAgeRating >= 5){
+    document.getElementById("result").innerHTML =
+      "<p>You can see G or PG rated movies.</p>"
+  }
 
-  if (sumOfAngles == 180) {
-    if ((angleA == angleB) && (angleA == angleC)) {
-      document.getElementById('result').innerHTML =
-      'This is an equilateral  triangle!'
-    } else if ((angleA == angleB) || (angleA == angleC) || (angleB == angleC)) {
-      document.getElementById('result').innerHTML =
-      'This is an isosceles triangle!'
-    } else {
-      document.getElementById('result').innerHTML =
-      'This is a scalene triangle!'
-    }
-  } else {
-    document.getElementById('result').innerHTML =
-    'This is not a triangle!'
+    else {
+    document.getElementById("result").innerHTML =
+      "<p>You are to young to see most things.</p>"
   }
 }
